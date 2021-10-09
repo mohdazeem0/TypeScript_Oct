@@ -86,6 +86,52 @@ interface MathFunc{
 }
 const add:MathFunc=(x:number, y:number):number=>x+y
 const sub:MathFunc=(x:number, y:number):number=>x-y
+console.log(add(1,2));
  
 
+interface PersoInterface{
+    id:number,
+    name:string
+    register():string
+}
+//||//
+//CLASSES
+class Person implements PersoInterface{
+    id:number
+    name:string
+    
+
+    constructor(id:number,name:string, ){
+        this.id = id
+        this.name=name   
+    }
+    register(){
+        return `${this.name} is now registered`
+    }
+}
+const brad=new Person(12, 'Brad')
+const milie=new Person(23, 'Mike')
+//console.log(brad.register());
+
+//SubClass
+class Employee extends Person{
+    position:string
+
+    constructor(id:number, name:string, position:string){
+        super(id,name)
+        this.position=position
+    }
+}
+const emp = new Employee(12, 'Mohd Azeem', 'Software Dev')
+console.log(emp.register());
+
+//Generics <T> it is type or placeholder
+function getArray<T>(items:T[]):T[]{
+    return new Array().concat(items)
+}
+let numArray=getArray<number>([1,2,3,4,5])
+let strArray=getArray<string>(['azim', 'azeeem', 'ajju'])
+
+numArray.push(12)
+strArray.push('hello')
 

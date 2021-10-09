@@ -52,3 +52,41 @@ console.log(addNum(2, 7));
 function log(message) {
     console.log(message);
 }
+const user1 = {
+    id: 1,
+    name: 'azeem'
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+console.log(add(1, 2));
+//||//
+//CLASSES
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const brad = new Person(12, 'Brad');
+const milie = new Person(23, 'Mike');
+//console.log(brad.register());
+//SubClass
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(12, 'Mohd Azeem', 'Software Dev');
+console.log(emp.register());
+//Generics <T> it is type or placeholder
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4, 5]);
+let strArray = getArray(['azim', 'azeeem', 'ajju']);
+numArray.push(12);
+strArray.push('hello');

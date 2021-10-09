@@ -1,6 +1,6 @@
 //Basics Types
 
-let id:number=5;
+let id:number=50;
 let company : string ='Mohd Azeem';
 let isPublished:boolean=true;
 let x:any='Hello There'; //any types of data types
@@ -22,4 +22,17 @@ employee=[
 
 //Unions
 let prodId:string|number
-prodId=2
+prodId=22;
+
+//Enums / Numerated Types//allows us to define set of name constants either numeric or strngs
+enum Direction1{
+    Up = 1,
+    Down,
+    Left,
+    Right,
+}
+console.log(Direction1.Up);
+
+
+
+
